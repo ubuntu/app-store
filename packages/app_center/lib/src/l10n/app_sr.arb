@@ -480,5 +480,9 @@
         "type": "int"
       }
     }
-  }
+  },
+  "managePageDocumentationLinkLabel": "Научите кроз документацију како да управљате Debian пакетима.",
+  "@managePageDocumentationLinkLabel": {},
+  "debPageDocumentationLinkLabel": "Научите о управљању Debian пакетима",
+  "@debPageDocumentationLinkLabel": {}
 }

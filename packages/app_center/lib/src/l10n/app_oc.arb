@@ -474,5 +474,9 @@
   "managePageQuitToUpdate": "Quitar per metre a jorn",
   "@managePageQuitToUpdate": {},
   "managePageDebUpdatesMessage": "Las mesas a jorn dels paquets Debian son gerits pel Gestionari de mesas a jorn.",
-  "@managePageDebUpdatesMessage": {}
+  "@managePageDebUpdatesMessage": {},
+  "managePageDocumentationLinkLabel": "Aprenètz cossí gerir los paquets Debian dins la documentacion.",
+  "@managePageDocumentationLinkLabel": {},
+  "debPageDocumentationLinkLabel": "Aprendre a gerir los paquets Debian",
+  "@debPageDocumentationLinkLabel": {}
 }

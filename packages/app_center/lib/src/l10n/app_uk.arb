@@ -474,5 +474,9 @@
         "type": "int"
       }
     }
-  }
+  },
+  "debPageDocumentationLinkLabel": "Дізнайтеся про керування пакунками Debian",
+  "@debPageDocumentationLinkLabel": {},
+  "managePageDocumentationLinkLabel": "Дізнайтеся, як керувати пакунками Debian у документації.",
+  "@managePageDocumentationLinkLabel": {}
 }

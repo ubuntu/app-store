@@ -480,5 +480,9 @@
   "debPageErrorNoPackageInfo": "לא נמצאו פרטי חבילה",
   "@debPageErrorNoPackageInfo": {},
   "snapReportPrivacyAgreementPrivacyPolicy": "מדיניות הפרטיות",
-  "@snapReportPrivacyAgreementPrivacyPolicy": {}
+  "@snapReportPrivacyAgreementPrivacyPolicy": {},
+  "managePageDocumentationLinkLabel": "ניתן למצוא מידע על ניהול חבילות דביאן בתיעוד.",
+  "@managePageDocumentationLinkLabel": {},
+  "debPageDocumentationLinkLabel": "מידע על ניהול חבילות דביאן",
+  "@debPageDocumentationLinkLabel": {}
 }

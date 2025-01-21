@@ -1,1 +1,64 @@
-{}
+{
+  "appCenterLabel": "Rakendustepood",
+  "@appCenterLabel": {},
+  "appstreamSearchGreylist": "äpp;rakendus;pakett;programm;tarvik;töövahend;tarvikud;app;äpid",
+  "@appstreamSearchGreylist": {},
+  "snapPageChannelLabel": "Kanal",
+  "@snapPageChannelLabel": {},
+  "snapPageContactPublisherLabel": "Võta ühendust väljaandjaga {publisher}",
+  "@snapPageContactPublisherLabel": {
+    "placeholders": {
+      "publisher": {
+        "type": "String"
+      }
+    }
+  },
+  "snapPageDescriptionLabel": "Kirjeldus",
+  "@snapPageDescriptionLabel": {},
+  "snapPageDeveloperWebsiteLabel": "Arendaja veebisait",
+  "@snapPageDeveloperWebsiteLabel": {},
+  "snapPageDownloadSizeLabel": "Allalaaditava faili suurus",
+  "@snapPageDownloadSizeLabel": {},
+  "snapPageSizeLabel": "Suurus",
+  "@snapPageSizeLabel": {},
+  "snapPageGalleryLabel": "Galerii",
+  "@snapPageGalleryLabel": {},
+  "snapPageLicenseLabel": "Litsents",
+  "@snapPageLicenseLabel": {},
+  "snapPageLinksLabel": "Lingid",
+  "@snapPageLinksLabel": {},
+  "snapPagePublisherLabel": "Väljaandja",
+  "@snapPagePublisherLabel": {},
+  "snapPagePublishedLabel": "Avaldatud",
+  "@snapPagePublishedLabel": {},
+  "snapPageSummaryLabel": "Kokkuvõte",
+  "@snapPageSummaryLabel": {},
+  "snapPageVersionLabel": "Versioon",
+  "@snapPageVersionLabel": {},
+  "snapPageShareLinkCopiedMessage": "Link on kopeeritud lõikelauale",
+  "@snapPageShareLinkCopiedMessage": {},
+  "explorePageLabel": "Uuri",
+  "@explorePageLabel": {},
+  "explorePageCategoriesLabel": "Kategooriad",
+  "@explorePageCategoriesLabel": {},
+  "managePageOwnUpdateAvailable": "Saadaval on Rakendustepoe uuendus",
+  "@managePageOwnUpdateAvailable": {},
+  "managePageQuitToUpdate": "Uuendamiseks välju",
+  "@managePageQuitToUpdate": {},
+  "managePageOwnUpdateDescription": "Rakendusest väljumisel uuendatakse ta automaatselt.",
+  "@managePageOwnUpdateDescription": {},
+  "managePageOwnUpdateDescriptionSoon": "Rakendustepood uuendatakse automaatselt {time}.",
+  "@managePageOwnUpdateDescriptionSoon": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "managePageOwnUpdateQuitButton": "Uuendamiseks välju",
+  "@managePageOwnUpdateQuitButton": {},
+  "managePageCheckForUpdates": "Kontrolli uuendusi",
+  "@managePageCheckForUpdates": {},
+  "managePageCheckingForUpdates": "Kontrollin uuendusi",
+  "@managePageCheckingForUpdates": {}
+}
