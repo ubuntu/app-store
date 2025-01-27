@@ -2,6 +2,7 @@
 
 #include <flutter_linux/flutter_linux.h>
 #include <handy.h>
+#include <gdk/gdk.h>
 
 #include "flutter/generated_plugin_registrant.h"
 
@@ -19,6 +20,66 @@ struct _MyApplication {
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 
+// Callback function to set the window size based on the monitor it's located on
+void on_window_realize(GtkWidget* widget, gpointer user_data) {
+  GdkRectangle monitor_geometry;
+  GdkWindow* gdk_window = gtk_widget_get_window(widget);
+  if (gdk_window == nullptr) {
+    return;
+  }
+
+  GdkDisplay* display = gdk_window_get_display(gdk_window);
+  GdkSeat* seat = gdk_display_get_default_seat(display);
+  GdkDevice* pointer = gdk_seat_get_pointer(seat);
+
+  // Get the current cursor position
+  int x, y;
+  gdk_device_get_position(pointer, nullptr, &x, &y);
+
+  // Get the monitor at the cursor position
+  GdkMonitor* monitor = gdk_display_get_monitor_at_point(display, x, y);
+
+  if (monitor == nullptr) {
+    return;
+  }
+
+  gdk_monitor_get_geometry(monitor, &monitor_geometry);
+  gint screen_width = monitor_geometry.width;
+  gint screen_height = monitor_geometry.height;
+
+  // Predefined sizes
+  const gint min_width = 800;
+  const gint min_height = 600;
+  const gint max_width = 1080;
+  const gint max_height = 700;
+
+  // Determine default window size based on screen size
+  gint default_width = screen_width;
+  gint default_height = screen_height;
+
+  g_print("Default width: %d, Default height: %d\n", default_width, default_height);
+
+
+  if (screen_width <= 1440 ) {
+    default_width = min_width;
+    default_height = min_height;
+  } else {
+    default_width = max_width;
+    default_height = max_height;
+  }
+
+  g_print("Default width: %d, Default height: %d\n", default_width, default_height);
+
+
+  GdkGeometry geometry;
+  geometry.min_width = min_width;
+  geometry.min_height = min_height;
+
+  // gtk_window_set_geometry_hints(GTK_WINDOW(widget), nullptr, &geometry, GDK_HINT_MIN_SIZE);
+  gtk_window_set_default_size(GTK_WINDOW(widget), default_width, default_height);
+}
+
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
@@ -34,14 +95,10 @@ static void my_application_activate(GApplication* application) {
   GtkWindow* window = GTK_WINDOW(hdy_application_window_new());
   gtk_window_set_application(window, GTK_APPLICATION(application));
 
-  GdkGeometry geometry;
+  // Connect to the "realize" signal to get the monitor size after the window is realized
+  g_signal_connect(window, "realize", G_CALLBACK(on_window_realize), nullptr);
 
-  // TODO: find better solution; set default window size based on available space
-  geometry.min_width = 800 + 52;  // account for shadow from libhandy
-  geometry.min_height = 600 + 52;
-  gtk_window_set_geometry_hints(window, nullptr, &geometry, GDK_HINT_MIN_SIZE);
 
-  gtk_window_set_default_size(window, 1280 + 52, 800 + 52);
   gtk_widget_show(GTK_WIDGET(window));
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
