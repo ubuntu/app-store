@@ -248,5 +248,33 @@
   "snapPageSizeLabel": "Tamanho",
   "@snapPageSizeLabel": {},
   "managePageOwnUpdateQuitButton": "Sair para atualizar",
-  "@managePageOwnUpdateQuitButton": {}
+  "@managePageOwnUpdateQuitButton": {},
+  "managePageInstallingLabel": "Instalando ({n})",
+  "@managePageInstallingLabel": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "managePageOwnUpdateDescriptionSoon": "O App center vai atualizar automaticamente em {time}.",
+  "@managePageOwnUpdateDescriptionSoon": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "managePageTitle": "Gerenciar snaps instalados",
+  "@managePageTitle": {},
+  "managePageNoInternet": "Não foi possível conectar ao servidor. Verifique sua conexão com a internet ou tente novamente mais tarde.",
+  "@managePageNoInternet": {},
+  "managePageUpdatedWeeksAgo": "Atualizado há {n, plural, =1{{n} semana} other{{n} semanas}}",
+  "@managePageUpdatedWeeksAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  }
 }
