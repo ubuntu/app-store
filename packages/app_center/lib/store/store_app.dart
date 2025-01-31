@@ -40,6 +40,7 @@ class StoreApp extends ConsumerStatefulWidget {
 class _StoreAppState extends ConsumerState<StoreApp> {
   final _navigatorKey = GlobalKey<NavigatorState>();
   final searchFocus = FocusNode();
+  final keyboardListenerFocus = FocusNode();
 
   NavigatorState get _navigator => _navigatorKey.currentState!;
 
@@ -56,28 +57,40 @@ class _StoreAppState extends ConsumerState<StoreApp> {
           searchFocus.nextFocus();
         },
       },
-      child: YaruTheme(
-        builder: (context, yaru, child) => MaterialApp(
-          theme: yaru.theme,
-          darkTheme: yaru.darkTheme,
-          highContrastTheme: yaruHighContrastLight,
-          highContrastDarkTheme: yaruHighContrastDark,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: localizationsDelegates,
-          navigatorKey: ref.watch(materialAppNavigatorKeyProvider),
-          supportedLocales: supportedLocales,
-          scrollBehavior: const MaterialScrollBehavior().copyWith(
-            dragDevices: {
-              PointerDeviceKind.mouse,
-              PointerDeviceKind.touch,
-              PointerDeviceKind.stylus,
-              PointerDeviceKind.unknown,
-              PointerDeviceKind.trackpad,
-            },
-          ),
-          home: _StoreAppHome(
-            navigatorKey: _navigatorKey,
-            searchFocus: searchFocus,
+      child: KeyboardListener(
+        onKeyEvent: (event) {
+          if (event is KeyDownEvent && (event.character?.isNotEmpty ?? false)) {
+            final currentFocus = FocusManager.instance.primaryFocus;
+            if (currentFocus?.context?.widget is FocusScope) {
+              searchFocus.requestFocus();
+              searchFocus.nextFocus();
+            }
+          }
+        },
+        focusNode: keyboardListenerFocus,
+        child: YaruTheme(
+          builder: (context, yaru, child) => MaterialApp(
+            theme: yaru.theme,
+            darkTheme: yaru.darkTheme,
+            highContrastTheme: yaruHighContrastLight,
+            highContrastDarkTheme: yaruHighContrastDark,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: localizationsDelegates,
+            navigatorKey: ref.watch(materialAppNavigatorKeyProvider),
+            supportedLocales: supportedLocales,
+            scrollBehavior: const MaterialScrollBehavior().copyWith(
+              dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch,
+                PointerDeviceKind.stylus,
+                PointerDeviceKind.unknown,
+                PointerDeviceKind.trackpad,
+              },
+            ),
+            home: _StoreAppHome(
+              navigatorKey: _navigatorKey,
+              searchFocus: searchFocus,
+            ),
           ),
         ),
       ),
