@@ -35,7 +35,7 @@
   "@managePageCheckForUpdates": {},
   "managePageCheckingForUpdates": "Checking for updates",
   "@managePageCheckingForUpdates": {},
-  "managePageLabel": "Manage installed Snaps",
+  "managePageLabel": "Manage",
   "@managePageLabel": {},
   "gamesPageBundles": "App Bundles",
   "@gamesPageBundles": {},
@@ -450,5 +450,33 @@
   "errorViewNetworkErrorAction": "Check your connection and retry.",
   "@errorViewNetworkErrorAction": {},
   "localDebWarningTitle": "Potentially unsafe",
-  "@localDebWarningTitle": {}
+  "@localDebWarningTitle": {},
+  "managePageInstallingLabel": "Installing ({n})",
+  "@managePageInstallingLabel": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "snapCategoryArtAndDesignSlogan": "From your first sketch to the final touch, explore apps for art and design.",
+  "@snapCategoryArtAndDesignSlogan": {},
+  "debPageDocumentationLinkLabel": "Learn about managing Debian packages",
+  "@debPageDocumentationLinkLabel": {},
+  "managePageUpdatesFailed": "{n, plural, =1{One update} other{{n} updates}} failed",
+  "@managePageUpdatesFailed": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "managePageUpdatesFailedBody": "We couldn't update these applications because they are currently running.\n\n{snapList}\nWhen you quit the applications, they will automatically update.",
+  "@managePageUpdatesFailedBody": {},
+  "managePageTitle": "Manage installed snaps",
+  "@managePageTitle": {},
+  "managePageDocumentationLinkLabel": "Learn how to manage Debian packages in the documentation.",
+  "@managePageDocumentationLinkLabel": {},
+  "snapCategoryArtAndDesignButtonLabel": "Start creating",
+  "@snapCategoryArtAndDesignButtonLabel": {}
 }
