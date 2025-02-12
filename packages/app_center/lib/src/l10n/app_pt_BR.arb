@@ -307,7 +307,7 @@
   "@snapReportEnterValidEmailError": {},
   "installAll": "Instalar tudo",
   "@installAll": {},
-  "managePageUpdatedYearsAgo": "Atualizado há {n, plural, =1{{n} ano} other{{n} anos}} atrás",
+  "managePageUpdatedYearsAgo": "Atualizado há {n, plural, =1{{n} ano} other{{n} anos}}",
   "@managePageUpdatedYearsAgo": {
     "placeholders": {
       "n": {
@@ -466,5 +466,7 @@
   "managePageUpdatesFailedBody": "Não conseguimos atualizar esses aplicativos porque eles estão em execução no momento.\n\n{snapList}\nQuando você fechar os aplicativos, eles serão atualizados automaticamente.",
   "@managePageUpdatesFailedBody": {},
   "managePageQuitToUpdate": "Sair para atualizar",
-  "@managePageQuitToUpdate": {}
+  "@managePageQuitToUpdate": {},
+  "managePageDocumentationLinkLabel": "Saiba como gerenciar pacotes Debian na documentação.",
+  "@managePageDocumentationLinkLabel": {}
 }
